@@ -1,40 +1,81 @@
 import './App.css'
 
+// Imagenes locales
+import hummus1 from './assets/hummus1.jpg'
+import hummus2 from './assets/hummus2.jpg'
+import hummus3 from './assets/hummus3.jpg'
+import hummus4 from './assets/hummus4.jpg'
+import hummus5 from './assets/hummus5.jpg'
+import hummus6 from './assets/hummus6.jpg'
+
 const INSTAGRAM_URL = 'https://www.instagram.com/p/DaEvh-MNoEn/?igsh=MXA2ZDd3azRvdnY4Zg=='
 const WHATSAPP_URL = 'https://wa.me/573003603681'
 const EMAIL = 'humussnack@gmail.com'
 
-// ────────────────────────────────────────────────
+// ──────────────────────────────────────────────────
 // DATA
-// ────────────────────────────────────────────────
+// ──────────────────────────────────────────────────
 
 const navLinks = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#empresa', label: 'Nuestra Empresa' },
-  { href: '#catalogo', label: 'Catálogo' },
-  { href: '#menu', label: 'Menú' },
-  { href: '#historia', label: 'Historia' },
-  { href: '#equipo', label: 'Nuestro Equipo' },
+  { href: '#inicio',      label: 'Inicio' },
+  { href: '#empresa',     label: 'Nuestra Empresa' },
+  { href: '#variedades',  label: 'Variedades' },
+  { href: '#menu',        label: 'Menú' },
+  { href: '#historia',    label: 'Historia' },
+  { href: '#equipo',      label: 'Nuestro Equipo' },
   { href: '#organigrama', label: 'Organigrama' },
-  { href: '#contacto', label: 'Contáctanos' },
+  { href: '#contacto',    label: 'Contáctanos' },
 ]
 
-const catalogItems = [
+// Variedades reales de hummus que ofrece Hummus Snack
+const variedades = [
   {
     id: 1,
-    category: 'Productos',
-    icon: '🫙',
-    desc: 'En Hummus Snack ofrecemos hummus árabe original y saludable, acompañado de macetas recicladas como opción para disfrutar mientras esperas tu pedido.',
-    img: 'https://images.unsplash.com/photo-1569096651661-820d0de9b8f7?w=600&q=80',
-    alt: 'Bowl de hummus clásico árabe con garbanzos',
+    name: 'Hummus Clásico Árabe',
+    desc: 'Nuestra receta base: garbanzos cocidos al punto, tahini artesanal, limón recién exprimido y un hilo generoso de aceite de oliva extra virgen. Servido con pan árabe tostado y garbanzos enteros por encima.',
+    tag: 'El original',
+    img: hummus1,
+    alt: 'Hummus clásico árabe con aceite de oliva y garbanzos',
   },
   {
     id: 2,
-    category: 'Servicios',
-    icon: '🌿',
-    desc: 'En Hummus Snack brindamos un servicio enfocado en la atención y satisfacción de nuestros clientes, asegurando un trato cordial, rápido y de calidad para que disfruten de un momento agradable en nuestro restaurante.',
-    img: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=600&q=80',
-    alt: 'Servicio de atención al cliente en restaurante',
+    name: 'Hummus con Pimentón Ahumado',
+    desc: 'A nuestra receta clásica le sumamos pimentón rojo ahumado y una pizca de paprika dulce. El resultado es un sabor profundo, ligeramente dulce y con un toque a brasa que lo hace irresistible.',
+    tag: 'El favorito',
+    img: hummus2,
+    alt: 'Hummus con pimentón ahumado y paprika',
+  },
+  {
+    id: 3,
+    name: 'Hummus Verde con Cilantro',
+    desc: 'Cilantro fresco, perejil y un toque de jalapeño se mezclan con nuestros garbanzos para crear un hummus vibrante, herbáceo y con carácter propio. Perfecto para los que buscan algo diferente.',
+    tag: 'Especial del día',
+    img: hummus3,
+    alt: 'Hummus verde con cilantro y hierbas frescas',
+  },
+  {
+    id: 4,
+    name: 'Hummus con Remolacha',
+    desc: 'Remolacha asada al horno mezclada con nuestra base cremosa de garbanzos. Un color rosa intenso, sabor suavemente dulce y textura aterciopelada. Tan bonito que da pena comerlo.',
+    tag: 'Instagrameable',
+    img: hummus4,
+    alt: 'Hummus con remolacha rosada en bowl de cerámica',
+  },
+  {
+    id: 5,
+    name: 'Snack Pack Completo',
+    desc: 'Nuestro combo estrella: hummus árabe clásico + pan pita tostado + bastones de zanahoria y pepino frescos. Todo en una presentación lista para disfrutar al instante. Ideal para llevar.',
+    tag: 'Combo',
+    img: hummus5,
+    alt: 'Snack Pack de Hummus Snack con pan pita y verduras',
+  },
+  {
+    id: 6,
+    name: 'Hummus con Maceta Reciclada',
+    desc: 'Nuestro plato especial con valor añadido: pide tu Snack Pack y recibe junto a él una maceta de material reciclado, vinilos de colores y un pincel para personalizarla mientras esperas. Arte y sabor en uno.',
+    tag: 'Sostenible',
+    img: hummus6,
+    alt: 'Hummus Snack con maceta reciclada para personalizar',
   },
 ]
 
@@ -42,38 +83,29 @@ const mvv = [
   {
     id: 'mision',
     title: 'Misión',
-    text: 'Hummus Snack tiene como misión compartir la rica cultura árabe y promover la diversidad en Colombia, creando un espacio acogedor y sostenible que ofrece una experiencia gastronómica única y auténtica, transportando a los clientes a un "mundo diferente" a través de sus platos.',
+    text: 'Compartir la rica cultura árabe y promover la diversidad en Colombia, creando un espacio acogedor y sostenible que ofrece una experiencia gastronómica única y auténtica, transportando a los clientes a un "mundo diferente" a través de sus platos.',
   },
   {
     id: 'vision',
     title: 'Visión',
-    text: 'Hummus Snack tiene la visión de, en 5 años, haber crecido en el municipio de Yumbo aumentando el tamaño de nuestro local, y que la población yumbeña nos conozca por nuestra calidad, tanto en personal como en productos e innovación, aportando una forma divertida de cuidar el medio ambiente y una forma saludable y deliciosa de saciar un antojo.',
+    text: 'En 5 años, haber crecido en el municipio de Yumbo aumentando el tamaño de nuestro local, y que la población yumbeña nos conozca por nuestra calidad, tanto en personal como en productos e innovación, aportando una forma divertida de cuidar el medio ambiente.',
   },
   {
     id: 'valores',
     title: 'Valores',
-    text: 'Hummus Snack S.A.S. se fundamenta en valores de responsabilidad ambiental, innovación, calidad, compromiso social, trabajo en equipo, orientación al cliente y transparencia, que guían cada acción de la empresa hacia un crecimiento sostenible y confiable.',
+    text: 'Responsabilidad ambiental, innovación, calidad, compromiso social, trabajo en equipo, orientación al cliente y transparencia: estos valores guían cada acción de Hummus Snack S.A.S. hacia un crecimiento sostenible y confiable.',
   },
 ]
 
 const team = [
-  { role: 'Gerente', name: 'Gabriela Meneses', icon: '👩‍💼' },
-  { role: 'Chef', name: 'Zara Fernanda Ortiz', icon: '👩‍🍳' },
-  { role: 'Cajero', name: 'Juan Pablo Benitez', icon: '🧾' },
+  { role: 'Gerente',  name: 'Gabriela Meneses',    icon: '👩‍💼', desc: 'Líder y visionaria detrás de Hummus Snack. Apasionada por la gastronomía árabe y el emprendimiento sostenible.' },
+  { role: 'Chef',     name: 'Zara Fernanda Ortiz', icon: '👩‍🍳', desc: 'La mente creativa de nuestras recetas. Experta en cocina árabe y en llevar el hummus a otro nivel de sabor.' },
+  { role: 'Cajero',   name: 'Juan Pablo Benitez',  icon: '🧾', desc: 'El encargado de que cada transacción sea rápida, clara y con la mejor actitud de servicio.' },
 ]
 
-const orgChart = [
-  { id: 'gerente', label: 'Gerente', level: 0, type: 'main' },
-  { id: 'contador', label: 'Contador', level: 1, type: 'staff' },
-  { id: 'chef', label: 'Chef', level: 2, type: 'main' },
-  { id: 'mesero', label: 'Mesero', level: 2, type: 'main' },
-  { id: 'cajero', label: 'Cajero', level: 2, type: 'main' },
-  { id: 'aux', label: 'Auxiliar del chef', level: 3, type: 'sub' },
-]
-
-// ────────────────────────────────────────────────
+// ──────────────────────────────────────────────────
 // ICONS
-// ────────────────────────────────────────────────
+// ──────────────────────────────────────────────────
 
 const IgIcon = () => (
   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
@@ -100,9 +132,9 @@ const Logo = ({ size = 36 }) => (
   </svg>
 )
 
-// ────────────────────────────────────────────────
+// ──────────────────────────────────────────────────
 // APP
-// ────────────────────────────────────────────────
+// ──────────────────────────────────────────────────
 
 function App() {
   return (
@@ -133,8 +165,8 @@ function App() {
       <section id="inicio" className="hero-section">
         <div className="hero-overlay" />
         <img
-          src="https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=1400&q=85"
-          alt="Mesa con hummus árabe, pan pita y verduras frescas"
+          src={hummus1}
+          alt="Hummus árabe artesanal Hummus Snack"
           className="hero-bg"
           width="1400" height="700" loading="eager"
         />
@@ -143,53 +175,77 @@ function App() {
           <h1>Hummus Snack</h1>
           <p className="hero-tagline">Sabores que alimentan, plantas que decoran.</p>
           <p className="hero-sub">
-            Hummus árabe original y saludable, hecho con garbanzos frescos y la receta de siempre.
-            Acompañado de macetas recicladas para que crees arte mientras esperas tu pedido.
+            Hummus árabe original hecho con garbanzos frescos, tahini artesanal y la receta de siempre.
+            Cuatro variedades únicas para todos los gustos, más nuestra maceta reciclada para que
+            crees arte mientras esperas tu pedido.
           </p>
           <div className="hero-cta">
-            <a href="#catalogo" className="btn btn-primary">Ver catálogo</a>
+            <a href="#variedades" className="btn btn-primary">Ver variedades</a>
             <a href="#menu" className="btn btn-secondary">Ver menú</a>
-            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ig">
-              <IgIcon />
-              Síguenos
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
+              <WaIcon />
+              Pedir ahora
             </a>
           </div>
         </div>
       </section>
 
+      {/* ── STRIP DE FOTOS ─────────────────────── */}
+      <div className="photo-strip" aria-hidden="true">
+        <img src={hummus1} alt="" loading="lazy" />
+        <img src={hummus2} alt="" loading="lazy" />
+        <img src={hummus3} alt="" loading="lazy" />
+        <img src={hummus4} alt="" loading="lazy" />
+        <img src={hummus5} alt="" loading="lazy" />
+        <img src={hummus6} alt="" loading="lazy" />
+      </div>
+
       {/* ── NUESTRA EMPRESA ────────────────────── */}
       <section id="empresa" className="empresa-section">
-        <div className="section-container">
-          <p className="section-eyebrow">Nuestra Empresa</p>
-          <h2>Misión, Visión y Valores</h2>
-          <p className="section-sub">Los pilares que guían cada plato y cada maceta que sale de nuestras manos.</p>
-          <div className="mvv-grid">
-            {mvv.map((item) => (
-              <div key={item.id} className={`mvv-card mvv-${item.id}`}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            ))}
+        <div className="section-container empresa-grid">
+          <div className="empresa-text">
+            <p className="section-eyebrow">Nuestra Empresa</p>
+            <h2>Misión, Visión y Valores</h2>
+            <p className="section-sub">Los pilares que guían cada plato y cada maceta que sale de nuestras manos.</p>
+            <div className="mvv-grid">
+              {mvv.map((item) => (
+                <div key={item.id} className={`mvv-card mvv-${item.id}`}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="empresa-img-wrap">
+            <img src={hummus2} alt="Preparación artesanal de hummus en Hummus Snack" loading="lazy" width="600" height="800" />
+            <img src={hummus5} alt="Snack Pack completo de Hummus Snack" loading="lazy" width="400" height="400" className="empresa-img-secondary" />
           </div>
         </div>
       </section>
 
-      {/* ── CATÁLOGO ───────────────────────────── */}
-      <section id="catalogo" className="catalogo-section">
+      {/* ── VARIEDADES ─────────────────────────── */}
+      <section id="variedades" className="variedades-section">
         <div className="section-container">
-          <p className="section-eyebrow">Catálogo</p>
-          <h2>Productos &amp; Servicios</h2>
-          <p className="section-sub">Lo que encontrarás en Hummus Snack.</p>
-          <div className="catalog-grid">
-            {catalogItems.map((item) => (
-              <article key={item.id} className="catalog-card">
-                <div className="catalog-img-wrap">
-                  <img src={item.img} alt={item.alt} width="600" height="400" loading="lazy" />
-                  <span className="catalog-badge">{item.icon} {item.category}</span>
+          <p className="section-eyebrow">Nuestras Variedades</p>
+          <h2>6 razones para volver</h2>
+          <p className="section-sub">
+            Cada variedad es una receta con identidad propia. Todas preparadas el mismo día con
+            ingredientes frescos y sin conservantes.
+          </p>
+          <div className="variedades-grid">
+            {variedades.map((v) => (
+              <article key={v.id} className="variedad-card">
+                <div className="variedad-img-wrap">
+                  <img src={v.img} alt={v.alt} width="600" height="400" loading="lazy" />
+                  <span className="variedad-tag">{v.tag}</span>
                 </div>
-                <div className="catalog-body">
-                  <h3>{item.category}</h3>
-                  <p>{item.desc}</p>
+                <div className="variedad-body">
+                  <h3>{v.name}</h3>
+                  <p>{v.desc}</p>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                    <WaIcon />
+                    Pedir este
+                  </a>
                 </div>
               </article>
             ))}
@@ -205,21 +261,30 @@ function App() {
           <div className="menu-card">
             <div className="menu-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1569096651661-820d0de9b8f7?w=700&q=80"
-                alt="Hummus árabe artesanal con pan pita tostado"
+                src={hummus3}
+                alt="Snack Pack Hummus Snack con pan pita y maceta reciclada"
                 width="700" height="500" loading="lazy"
               />
             </div>
             <div className="menu-body">
-              <h3>🫙 Snack Pack</h3>
+              <h3>🫘 Snack Pack</h3>
               <p>
-                Es un combo que trae nuestro plato principal, el <strong>hummus árabe</strong> que
-                está hecho a base de garbanzos cocinados, y como adicional, se le hará la entrega —
-                si así lo desea — de una <strong>maceta hecha de material reciclado</strong>, color
-                blanca, un kit de pequeños tarros con distintos vinilos de colores junto a un pincel
-                para que puedas desestresarte dejando volar tu creatividad, probando distintos
-                diseños mientras esperas tu pedido.
+                Nuestro combo principal incluye el <strong>hummus árabe</strong> hecho a base de
+                garbanzos cocidos frescos, pan árabe tostado y una selección de bastones de
+                zanahoria y pepino recién cortados.
               </p>
+              <p>
+                Como valor adicional, si así lo deseas, recibes una{' '}
+                <strong>maceta de material reciclado</strong> color blanca, un kit de pequeños
+                tarros con distintos vinilos de colores y un pincel, para que desestresarte
+                creando tu propio diseño mientras esperas tu pedido.
+              </p>
+              <ul className="menu-includes">
+                <li>✅ Hummus árabe artesanal (variedad a elección)</li>
+                <li>✅ Pan árabe tostado al momento</li>
+                <li>✅ Bastones de zanahoria y pepino frescos</li>
+                <li>✅ Maceta reciclada + kit de pintura (opcional)</li>
+              </ul>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-wa">
                 <WaIcon />
                 Pedir por WhatsApp
@@ -237,7 +302,8 @@ function App() {
             <h2>¿Cómo nació Hummus Snack?</h2>
             <p>
               <strong>Hummus Snack S.A.S.</strong> fue creada en Yumbo como iniciativa empresarial
-              de cuatro socias, con el propósito de <strong>ofrecer alimentos saludables y sostenibles</strong>.
+              de cuatro socias, con el propósito de{' '}
+              <strong>ofrecer alimentos saludables y sostenibles</strong>.
             </p>
             <p>
               Desde su origen integra la producción de hummus en diferentes variedades y el valor
@@ -245,26 +311,45 @@ function App() {
               propuesta innovadora en el sector gastronómico local.
             </p>
             <p>
-              Más sobre nosotros: Hummus Snack es una empresa que combina la rica gastronomía árabe
-              con la creatividad y cuidado del medio ambiente, ofreciendo un delicioso plato
-              tradicional preparado con ingredientes frescos y auténticos, junto con un servicio único
-              de pintura de macetas y diseños innovadores.
+              Más que un restaurante, somos un espacio donde la <strong>gastronomía árabe</strong>{' '}
+              se encuentra con la creatividad y el cuidado del medio ambiente. Cada plato cuenta
+              una historia, cada maceta es una obra de arte en proceso.
             </p>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ig">
+              <IgIcon />
+              Síguenos en Instagram
+            </a>
           </div>
           <div className="about-images">
             <img
-              src="https://images.unsplash.com/photo-1604679177433-1e028e07b30f?w=700&q=80"
-              alt="Ingredientes frescos para preparar hummus árabe"
+              src={hummus4}
+              alt="Historia de Hummus Snack, hummus artesanal en Yumbo"
               className="about-img-main"
               width="700" height="500" loading="lazy"
             />
             <img
-              src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?w=400&q=80"
-              alt="Hummus casero en bowl de cerámica"
+              src={hummus6}
+              alt="Maceta reciclada y hummus, propuesta sostenible de Hummus Snack"
               className="about-img-secondary"
               width="400" height="300" loading="lazy"
             />
           </div>
+        </div>
+      </section>
+
+      {/* ── GALERÍA ────────────────────────────── */}
+      <section className="galeria-section" aria-label="Galería de productos">
+        <div className="section-container" style={{ textAlign: 'center', paddingBottom: '1.5rem' }}>
+          <p className="section-eyebrow">Galería</p>
+          <h2>Tan rico que entra por los ojos</h2>
+        </div>
+        <div className="galeria-grid">
+          <img src={hummus1} alt="Hummus clásico árabe" loading="lazy" />
+          <img src={hummus2} alt="Hummus con pimentón ahumado" loading="lazy" />
+          <img src={hummus3} alt="Hummus verde con cilantro" loading="lazy" />
+          <img src={hummus4} alt="Hummus con remolacha" loading="lazy" />
+          <img src={hummus5} alt="Snack Pack completo" loading="lazy" />
+          <img src={hummus6} alt="Hummus con maceta reciclada" loading="lazy" />
         </div>
       </section>
 
@@ -273,13 +358,14 @@ function App() {
         <div className="section-container">
           <p className="section-eyebrow">Nuestro Equipo</p>
           <h2>Las personas detrás de cada plato</h2>
-          <p className="section-sub">Un equipo comprometido con la calidad, la calidez y el sabor auténtico.</p>
+          <p className="section-sub">Un equipo pequeño, comprometido y lleno de sabor.</p>
           <div className="team-grid">
             {team.map((m) => (
               <div key={m.role} className="team-card">
                 <div className="team-icon" aria-hidden="true">{m.icon}</div>
                 <p className="team-role">{m.role}</p>
                 <h3 className="team-name">{m.name}</h3>
+                <p className="team-desc">{m.desc}</p>
               </div>
             ))}
           </div>
@@ -292,17 +378,14 @@ function App() {
           <p className="section-eyebrow">Organigrama</p>
           <h2>Estructura Organizacional</h2>
           <div className="org-chart">
-            {/* Nivel 0 - Gerente */}
             <div className="org-row">
               <div className="org-node org-main">Gerente</div>
             </div>
-            {/* Conector + Contador (staff) */}
             <div className="org-connector-v" />
             <div className="org-row org-staff-row">
               <div className="org-node org-staff">Contador</div>
             </div>
             <div className="org-connector-v" />
-            {/* Nivel 2 */}
             <div className="org-row">
               <div className="org-connector-h" />
             </div>
@@ -352,7 +435,7 @@ function App() {
                   <span className="contact-icon">🕐</span>
                   <div>
                     <strong>Horario de atención</strong>
-                    <span>Lunes a viernes: próximamente<br />Viernes, sábado y domingo: próximamente</span>
+                    <span>Lunes a viernes: próximamente<br />Fines de semana: próximamente</span>
                   </div>
                 </li>
               </ul>
@@ -367,10 +450,10 @@ function App() {
                 </a>
               </div>
             </div>
-            <div className="contact-map-wrap">
+            <div className="contact-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1569096651661-820d0de9b8f7?w=700&q=80"
-                alt="Plato de hummus árabe Hummus Snack"
+                src={hummus5}
+                alt="Snack Pack de Hummus Snack listo para servir"
                 width="700" height="500" loading="lazy"
               />
             </div>
