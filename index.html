@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hummus Snack | Sabores que alimentan, plantas que decoran</title>
+  <meta name="description" content="Landing page de ventas para Hummus Snack: hummus artesanal, combos creativos y contacto directo por WhatsApp." />
+  <meta property="og:title" content="Hummus Snack" />
+  <meta property="og:description" content="Sabores que alimentan, plantas que decoran." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2.2rem, 1.2rem + 3vw, 4.4rem);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.9rem;
+      --radius-lg: 1.4rem;
+      --radius-xl: 2rem;
+      --radius-full: 999px;
+      --shadow-sm: 0 6px 20px rgba(22, 17, 10, 0.08);
+      --shadow-md: 0 20px 50px rgba(22, 17, 10, 0.12);
+      --bg: #c9c0bc;
+      --surface: rgba(248, 242, 238, 0.72);
+      --surface-strong: #6f6664;
+      --card: #111111;
+      --text: #171412;
+      --text-soft: #5d5654;
+      --text-inverse: #f7f2eb;
+      --primary: #97ab43;
+      --primary-strong: #6f812d;
+      --gold: #dcb649;
+      --line: rgba(23, 20, 18, 0.12);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Manrope', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; border: 0; cursor: pointer; }
+
+    .leaf-bg::before,
+    .leaf-bg::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      width: 260px;
+      height: 260px;
+      opacity: 0.32;
+      pointer-events: none;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240' fill='none'%3E%3Cg stroke='%23dcb649' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M43 201c34-50 86-85 148-103'/%3E%3Cpath d='M62 167c1-22-7-39-26-57 29 2 47 17 53 43'/%3E%3Cpath d='M94 145c-3-24 3-44 20-64 10 25 8 45-4 64'/%3E%3Cpath d='M122 129c9-21 25-34 50-39-7 24-23 38-48 43'/%3E%3Cpath d='M143 166c10-19 28-31 54-33-10 22-28 34-53 35'/%3E%3Cpath d='M79 194c-8-19-24-31-48-37 8 23 24 36 48 37Z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .leaf-bg::before { top: -36px; left: -52px; }
+    .leaf-bg::after { bottom: -40px; right: -48px; transform: scaleX(-1) rotate(-8deg); }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 10px;
+      background: #fff;
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-full);
+      z-index: 100;
+    }
+    .skip-link:focus { left: 10px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(201, 192, 188, 0.84);
+      border-bottom: 1px solid rgba(23, 20, 18, 0.08);
+    }
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-4) var(--space-5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f4efe8, #ded2c8);
+      border: 2px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      flex: 0 0 auto;
+    }
+    .brand-mark svg { width: 30px; height: 30px; }
+    .brand-copy strong {
+      display: block;
+      font-size: var(--text-lg);
+      font-family: var(--font-display);
+      line-height: 0.95;
+      font-weight: 600;
+    }
+    .brand-copy span {
+      font-size: var(--text-xs);
+      color: var(--text-soft);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: var(--text-sm);
+      color: var(--text-soft);
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--card);
+      color: var(--text-inverse);
+      padding: 0.9rem 1.2rem;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      font-size: var(--text-sm);
+    }
+
+    main { position: relative; }
+    section {
+      position: relative;
+      padding: clamp(var(--space-16), 10vw, var(--space-24)) var(--space-5);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      align-items: center;
+      gap: clamp(var(--space-8), 5vw, var(--space-16));
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: rgba(255,255,255,0.4);
+      border: 1px solid rgba(23,20,18,0.08);
+      border-radius: var(--radius-full);
+      padding: 0.55rem 0.9rem;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-soft);
+      margin-bottom: var(--space-4);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 0.92;
+      font-weight: 600;
+      max-width: 10ch;
+      margin-bottom: var(--space-5);
+    }
+    .hero p {
+      max-width: 58ch;
+      color: var(--text-soft);
+      font-size: var(--text-base);
+      margin-bottom: var(--space-6);
+    }
+    .hero-actions {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-8);
+    }
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.3rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      transition: transform 180ms ease, background 180ms ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--card); color: var(--text-inverse); }
+    .btn-secondary {
+      background: rgba(255,255,255,0.45);
+      color: var(--text);
+      border: 1px solid rgba(23,20,18,0.08);
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+    .stat {
+      background: rgba(255,255,255,0.38);
+      border: 1px solid rgba(23,20,18,0.08);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      box-shadow: var(--shadow-sm);
+    }
+    .stat strong {
+      display: block;
+      font-size: var(--text-xl);
+      font-family: var(--font-display);
+      line-height: 1;
+      margin-bottom: var(--space-2);
+    }
+    .stat span { color: var(--text-soft); font-size: var(--text-sm); }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: var(--space-4);
+      align-items: end;
+    }
+    .photo-card {
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 3px solid rgba(255,255,255,0.2);
+    }
+    .photo-card.tall { height: 460px; }
+    .photo-card.small { height: 320px; align-self: start; margin-top: var(--space-12); }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+    .floating-note {
+      position: absolute;
+      right: 8%;
+      bottom: 5%;
+      background: var(--card);
+      color: var(--text-inverse);
+      padding: var(--space-5);
+      border-radius: var(--radius-xl);
+      max-width: 240px;
+      box-shadow: var(--shadow-md);
+    }
+    .floating-note strong {
+      display: block;
+      font-size: var(--text-lg);
+      font-family: var(--font-display);
+      margin-bottom: var(--space-2);
+    }
+    .floating-note span { color: rgba(247,242,235,0.78); font-size: var(--text-sm); }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: var(--space-5);
+      margin-bottom: var(--space-10);
+      flex-wrap: wrap;
+    }
+    .section-heading h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      line-height: 1;
+    }
+    .section-heading p {
+      color: var(--text-soft);
+      max-width: 54ch;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+    .product-card {
+      background: rgba(255,255,255,0.4);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(23,20,18,0.08);
+      box-shadow: var(--shadow-sm);
+      transition: transform 180ms ease;
+    }
+    .product-card:hover { transform: translateY(-4px); }
+    .product-media { aspect-ratio: 4 / 4.3; overflow: hidden; }
+    .product-media img { width: 100%; height: 100%; object-fit: cover; }
+    .product-body { padding: var(--space-5); }
+    .tag {
+      display: inline-flex;
+      padding: 0.35rem 0.7rem;
+      border-radius: var(--radius-full);
+      background: rgba(151,171,67,0.16);
+      color: var(--primary-strong);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: var(--space-3);
+    }
+    .product-card h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-2);
+    }
+    .product-card p {
+      color: var(--text-soft);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-4);
+    }
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+    .price-row strong {
+      font-size: var(--text-lg);
+      font-family: var(--font-display);
+    }
+
+    .story-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(var(--space-6), 5vw, var(--space-12));
+      align-items: center;
+    }
+    .story-card {
+      background: var(--surface-strong);
+      color: var(--text-inverse);
+      padding: clamp(var(--space-6), 5vw, var(--space-10));
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+    }
+    .story-card p + p { margin-top: var(--space-4); }
+    .story-gallery {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: var(--space-4);
+      align-items: center;
+    }
+    .story-gallery .photo-card.tall { height: 420px; }
+    .story-gallery .photo-card.small { height: 250px; margin-top: 0; }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+    .benefit {
+      background: rgba(255,255,255,0.4);
+      border: 1px solid rgba(23,20,18,0.08);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .benefit-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(151,171,67,0.16);
+      color: var(--primary-strong);
+      margin-bottom: var(--space-5);
+    }
+    .benefit h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
+    .benefit p { color: var(--text-soft); font-size: var(--text-sm); }
+
+    .contact-card {
+      background: var(--card);
+      color: var(--text-inverse);
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-6), 5vw, var(--space-10));
+      box-shadow: var(--shadow-md);
+    }
+    .contact-list {
+      display: grid;
+      gap: var(--space-4);
+      margin-top: var(--space-5);
+    }
+    .contact-item {
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid rgba(247,242,235,0.12);
+    }
+    .contact-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .contact-item span {
+      display: block;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(247,242,235,0.58);
+      margin-bottom: var(--space-1);
+    }
+    .contact-panel {
+      display: grid;
+      gap: var(--space-4);
+    }
+    .mini-box {
+      background: rgba(255,255,255,0.45);
+      border: 1px solid rgba(23,20,18,0.08);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+    }
+    .mini-box h3 { margin-bottom: var(--space-2); font-size: var(--text-lg); }
+    .mini-box p { color: var(--text-soft); }
+
+    .site-footer {
+      padding: var(--space-8) var(--space-5) var(--space-10);
+    }
+    .footer-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--line);
+      color: var(--text-soft);
+      font-size: var(--text-sm);
+    }
+    .socials { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+    .socials a {
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,0.42);
+      border: 1px solid rgba(23,20,18,0.08);
+    }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .story-grid,
+      .contact-grid,
+      .products-grid,
+      .benefits-grid { grid-template-columns: 1fr; }
+      .hero-visual,
+      .story-gallery { grid-template-columns: 1fr 1fr; min-height: auto; }
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero h1 { max-width: 12ch; }
+      .hero-stats { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      section { padding-inline: var(--space-4); }
+      .hero-visual,
+      .story-gallery { grid-template-columns: 1fr; }
+      .photo-card.tall,
+      .story-gallery .photo-card.tall,
+      .photo-card.small,
+      .story-gallery .photo-card.small { height: 320px; margin-top: 0; }
+      .floating-note {
+        position: static;
+        max-width: none;
+      }
+      .section-heading { margin-bottom: var(--space-8); }
+      .benefit { min-height: auto; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Principal">
+      <a class="brand" href="#inicio">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 37c0-9.6 6.7-16 15-16s15 6.4 15 16c0 7.5-5.5 12-15 12S17 44.5 17 37Z" fill="currentColor" opacity=".12"/>
+            <path d="M19 36c0-8 5.5-13 13-13s13 5 13 13-5.2 11-13 11-13-3.7-13-11Z" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M32 17c4-5 8-6.5 12-5-1.3 4.9-4 8.4-8 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M29 28c3 3 5.5 7 7 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M23 38c5-3 13-3 18 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-copy">
+          <strong>Hummus Snack</strong>
+          <span>Sabores que alimentan, plantas que decoran</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#productos">Productos</a>
+        <a href="#historia">Historia</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+
+      <a class="nav-cta" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero leaf-bg" id="inicio">
+      <div class="container hero-grid">
+        <div data-reveal>
+          <div class="eyebrow">Edición artesanal · Yumbo, Valle</div>
+          <h1>Una venta que se ve rica y se siente diferente</h1>
+          <p>Te preparé una single page moderna, visual y fácil de editar, inspirada en tu identidad actual: tonos beige, negro, dorado y verde oliva, con enfoque en vender el producto y destacar la experiencia creativa de Hummus Snack.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#productos">Ver catálogo</a>
+            <a class="btn btn-secondary" href="#contacto">Hablar con nosotros</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>100%</strong>
+              <span>Estilo single page para navegar rápido.</span>
+            </div>
+            <div class="stat">
+              <strong>1 combo</strong>
+              <span>Producto estrella con propuesta creativa.</span>
+            </div>
+            <div class="stat">
+              <strong>+ diseño</strong>
+              <span>Comida y detalle decorativo en una sola experiencia.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <figure class="photo-card tall">
+            <img src="./assets/Pagina-Principal-2.jpg" alt="Presentación principal de Hummus Snack con producto y branding." width="900" height="1200" loading="eager" decoding="async">
+          </figure>
+          <figure class="photo-card small">
+            <img src="./assets/Mas-Sobre-Nosotros-5.jpg" alt="Detalle del producto de hummus y maceta decorativa." width="900" height="1200" loading="lazy" decoding="async">
+          </figure>
+          <div class="floating-note">
+            <strong>Snack Pack</strong>
+            <span>Hummus árabe + experiencia creativa con maceta reciclada para convertir una compra en un recuerdo.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div>
+            <h2>Productos que venden mejor</h2>
+          </div>
+          <p>Organicé la oferta en tarjetas claras para que el cliente entienda rápido qué compra, por qué es diferente y qué acción debe tomar.</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card" data-reveal>
+            <div class="product-media">
+              <img src="./assets/Menu-6.jpg" alt="Menú de Hummus Snack presentado en una composición visual." width="900" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-body">
+              <span class="tag">Producto estrella</span>
+              <h3>Snack Pack</h3>
+              <p>Combo con hummus artesanal, acompañantes y una experiencia creativa que vuelve memorable la compra.</p>
+              <div class="price-row">
+                <strong>Desde tu menú</strong>
+                <a class="btn btn-secondary" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Cotizar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-reveal>
+            <div class="product-media">
+              <img src="./assets/Historia-4.jpg" alt="Plato de hummus servido con pan e ingredientes frescos." width="900" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-body">
+              <span class="tag">Artesanal</span>
+              <h3>Hummus tradicional</h3>
+              <p>Preparado con ingredientes frescos y una presentación cálida para transmitir sabor casero desde el primer vistazo.</p>
+              <div class="price-row">
+                <strong>Ideal para antojos</strong>
+                <a class="btn btn-secondary" href="#contacto">Consultar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-reveal>
+            <div class="product-media">
+              <img src="./assets/Contactanos-3.jpg" alt="Sección de contacto e identidad visual de Hummus Snack." width="900" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-body">
+              <span class="tag">Venta directa</span>
+              <h3>Pedidos rápidos</h3>
+              <p>Botones directos a WhatsApp, ubicación y datos de contacto para que el cliente convierta sin perder tiempo.</p>
+              <div class="price-row">
+                <strong>Respuesta cercana</strong>
+                <a class="btn btn-secondary" href="tel:+573003603681">Llamar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="historia" class="leaf-bg">
+      <div class="container story-grid">
+        <div class="story-card" data-reveal>
+          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-bottom: 1rem;">Una marca con relato</h2>
+          <p>Tomé la esencia de tus piezas: gastronomía árabe, sostenibilidad y creatividad. Por eso la página mezcla una estética elegante con bloques modernos de venta para que no parezca escolar, sino una marca lista para mostrarse en redes o a clientes.</p>
+          <p>También dejé una estructura simple de editar: hero, catálogo, historia, beneficios y contacto. Así la puedes usar en HTML puro o migrarla fácil a React cuando quieras.</p>
+        </div>
+        <div class="story-gallery" data-reveal>
+          <figure class="photo-card tall">
+            <img src="./assets/Historia-4.jpg" alt="Historia visual del hummus con presentación del producto." width="900" height="1200" loading="lazy" decoding="async">
+          </figure>
+          <figure class="photo-card small">
+            <img src="./assets/Nuestra-Empresa-7.jpg" alt="Sección institucional con misión, visión y valores de Hummus Snack." width="900" height="1200" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <div>
+            <h2>Por qué esta landing funciona</h2>
+          </div>
+          <p>La idea fue convertir tus láminas en una experiencia web más comercial, con mejor jerarquía visual, llamadas a la acción y un recorrido natural en una sola pantalla larga.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit" data-reveal>
+            <div>
+              <div class="benefit-icon" aria-hidden="true">✦</div>
+              <h3>Diseño alineado</h3>
+              <p>Conserva tu paleta beige, negro, dorado y verde oliva para mantener coherencia con la marca original.</p>
+            </div>
+            <span class="tag">Branding</span>
+          </article>
+          <article class="benefit" data-reveal>
+            <div>
+              <div class="benefit-icon" aria-hidden="true">✦</div>
+              <h3>Single page</h3>
+              <p>Todo el contenido vive en una sola página con navegación suave, ideal para compartir por enlace o QR.</p>
+            </div>
+            <span class="tag">Usabilidad</span>
+          </article>
+          <article class="benefit" data-reveal>
+            <div>
+              <div class="benefit-icon" aria-hidden="true">✦</div>
+              <h3>Lista para vender</h3>
+              <p>Incluye botones hacia WhatsApp, foco en el producto y una presentación más persuasiva que informativa.</p>
+            </div>
+            <span class="tag">Conversión</span>
+          </article>
+          <article class="benefit" data-reveal>
+            <div>
+              <div class="benefit-icon" aria-hidden="true">✦</div>
+              <h3>Fácil de adaptar</h3>
+              <p>Puedes cambiar textos, precios, fotos y enlaces sin complicarte, o pasarla luego a React/Vite.</p>
+            </div>
+            <span class="tag">Escalable</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="leaf-bg">
+      <div class="container contact-grid">
+        <div class="contact-card" data-reveal>
+          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-bottom: 1rem;">Contacto directo</h2>
+          <p style="color: rgba(247,242,235,0.78); max-width: 46ch;">Dejé esta sección pensada para conversión rápida: WhatsApp, dirección, correo y horario en un mismo bloque.</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <span>Teléfono / WhatsApp</span>
+              <a href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">300 360 3681</a>
+            </div>
+            <div class="contact-item">
+              <span>Dirección</span>
+              <p>Cra. 3A #4-1, Barrio Puerto Isaac, Yumbo, Valle del Cauca</p>
+            </div>
+            <div class="contact-item">
+              <span>Correo</span>
+              <a href="mailto:hummussnack@gmail.com">hummussnack@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-panel" data-reveal>
+          <div class="mini-box">
+            <h3>Qué te entregué</h3>
+            <p>Una landing moderna en un solo archivo HTML con CSS y JavaScript integrado, sin dependencias ni complicaciones.</p>
+          </div>
+          <div class="mini-box">
+            <h3>Siguiente mejora sugerida</h3>
+            <p>Agregar botón flotante de WhatsApp, galería de productos y una sección de testimonios o reseñas para subir confianza.</p>
+          </div>
+          <div class="mini-box">
+            <h3>Ideal para</h3>
+            <p>Publicarla en GitHub Pages, Netlify, Render estático o integrarla luego dentro de un proyecto React/Vite.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p>Landing single page diseñada para Hummus Snack con enfoque visual, comercial y fácil de editar.</p>
+      <div class="socials">
+        <a href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="mailto:hummussnack@gmail.com">Correo</a>
+        <a href="#inicio">Arriba</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
