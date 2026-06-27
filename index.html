@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hummus Snack | Sabores que alimentan, plantas que decoran</title>
-  <meta name="description" content="Landing page de ventas para Hummus Snack: hummus artesanal, combos creativos y contacto directo por WhatsApp." />
+  <meta name="description" content="Hummus artesanal preparado con garbanzos frescos, tahini y especias mediterráneas. Variedades clásica, picante, ahumada y más. Pedidos por WhatsApp en Yumbo, Valle." />
   <meta property="og:title" content="Hummus Snack" />
   <meta property="og:description" content="Sabores que alimentan, plantas que decoran." />
   <meta property="og:type" content="website" />
@@ -159,6 +159,19 @@
       white-space: nowrap;
       font-size: var(--text-sm);
     }
+    .nav-ig {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+      color: #fff !important;
+      padding: 0.7rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+    .nav-ig:hover { opacity: 0.88; transform: translateY(-1px); }
 
     main { position: relative; }
     section {
@@ -197,7 +210,7 @@
       font-size: var(--text-2xl);
       line-height: 0.92;
       font-weight: 600;
-      max-width: 10ch;
+      max-width: 12ch;
       margin-bottom: var(--space-5);
     }
     .hero p {
@@ -217,10 +230,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 0.45rem;
       padding: 0.95rem 1.3rem;
       border-radius: var(--radius-full);
       font-size: var(--text-sm);
-      transition: transform 180ms ease, background 180ms ease;
+      transition: transform 180ms ease, background 180ms ease, opacity 180ms ease;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn-primary { background: var(--card); color: var(--text-inverse); }
@@ -229,6 +243,11 @@
       color: var(--text);
       border: 1px solid rgba(23,20,18,0.08);
     }
+    .btn-ig {
+      background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+      color: #fff;
+    }
+    .btn-ig:hover { opacity: 0.88; }
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -353,6 +372,27 @@
       font-family: var(--font-display);
     }
 
+    /* GALLERY STRIP */
+    .gallery-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+    .gallery-strip figure {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 1;
+      box-shadow: var(--shadow-sm);
+    }
+    .gallery-strip figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .gallery-strip figure:hover img { transform: scale(1.05); }
+
     .story-grid,
     .contact-grid {
       display: grid;
@@ -386,11 +426,27 @@
       background: rgba(255,255,255,0.4);
       border: 1px solid rgba(23,20,18,0.08);
       border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .benefit-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .benefit-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .benefit:hover .benefit-img img { transform: scale(1.05); }
+    .benefit-body {
       padding: var(--space-5);
-      min-height: 220px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      flex: 1;
     }
     .benefit-icon {
       width: 52px;
@@ -400,10 +456,11 @@
       border-radius: 50%;
       background: rgba(151,171,67,0.16);
       color: var(--primary-strong);
-      margin-bottom: var(--space-5);
+      margin-bottom: var(--space-4);
+      font-size: 1.2rem;
     }
     .benefit h3 { font-size: var(--text-lg); margin-bottom: var(--space-2); }
-    .benefit p { color: var(--text-soft); font-size: var(--text-sm); }
+    .benefit p { color: var(--text-soft); font-size: var(--text-sm); margin-bottom: var(--space-4); }
 
     .contact-card {
       background: var(--card);
@@ -438,8 +495,18 @@
       background: rgba(255,255,255,0.45);
       border: 1px solid rgba(23,20,18,0.08);
       border-radius: var(--radius-lg);
-      padding: var(--space-5);
+      overflow: hidden;
     }
+    .mini-box-img {
+      aspect-ratio: 16/7;
+      overflow: hidden;
+    }
+    .mini-box-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .mini-box-body { padding: var(--space-5); }
     .mini-box h3 { margin-bottom: var(--space-2); font-size: var(--text-lg); }
     .mini-box p { color: var(--text-soft); }
 
@@ -459,7 +526,7 @@
       color: var(--text-soft);
       font-size: var(--text-sm);
     }
-    .socials { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+    .socials { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
     .socials a {
       min-height: 44px;
       min-width: 44px;
@@ -467,6 +534,14 @@
       border-radius: var(--radius-full);
       background: rgba(255,255,255,0.42);
       border: 1px solid rgba(23,20,18,0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .socials a.ig-link {
+      background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+      color: #fff;
+      border: none;
     }
 
     [data-reveal] {
@@ -493,6 +568,7 @@
       }
       .hero h1 { max-width: 12ch; }
       .hero-stats { grid-template-columns: 1fr; }
+      .gallery-strip { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 700px) {
@@ -511,6 +587,7 @@
       .section-heading { margin-bottom: var(--space-8); }
       .benefit { min-height: auto; }
       .footer-wrap { flex-direction: column; align-items: flex-start; }
+      .gallery-strip { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -536,78 +613,89 @@
       </a>
 
       <div class="nav-links">
-        <a href="#productos">Productos</a>
-        <a href="#historia">Historia</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#productos">Variedades</a>
+        <a href="#historia">Nuestra historia</a>
+        <a href="#beneficios">Ingredientes</a>
+        <a href="#contacto">Pedidos</a>
       </div>
 
-      <a class="nav-cta" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+      <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
+        <a class="nav-ig" href="https://www.instagram.com/p/DaEvh-MNoEn/?igsh=MXA2ZDd3azRvdnY4Zg==" target="_blank" rel="noopener noreferrer" aria-label="Ver en Instagram">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
+        <a class="nav-cta" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+      </div>
     </nav>
   </header>
 
   <main id="contenido">
+    <!-- HERO -->
     <section class="hero leaf-bg" id="inicio">
       <div class="container hero-grid">
         <div data-reveal>
-          <div class="eyebrow">Edición artesanal · Yumbo, Valle</div>
-          <h1>Una venta que se ve rica y se siente diferente</h1>
-          <p>Te preparé una single page moderna, visual y fácil de editar, inspirada en tu identidad actual: tonos beige, negro, dorado y verde oliva, con enfoque en vender el producto y destacar la experiencia creativa de Hummus Snack.</p>
+          <div class="eyebrow">Artesanal · Yumbo, Valle del Cauca</div>
+          <h1>Hummus fresco, hecho con amor cada día</h1>
+          <p>En Hummus Snack preparamos hummus árabe tradicional con garbanzos cocidos al momento, tahini artesanal, limón fresco y un toque de aceite de oliva. Sin conservantes, sin secretos: puro sabor mediterráneo en cada cucharada.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#productos">Ver catálogo</a>
-            <a class="btn btn-secondary" href="#contacto">Hablar con nosotros</a>
+            <a class="btn btn-primary" href="#productos">Ver variedades</a>
+            <a class="btn btn-ig" href="https://www.instagram.com/p/DaEvh-MNoEn/?igsh=MXA2ZDd3azRvdnY4Zg==" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Ver en Instagram
+            </a>
           </div>
           <div class="hero-stats">
             <div class="stat">
               <strong>100%</strong>
-              <span>Estilo single page para navegar rápido.</span>
+              <span>Natural, sin conservantes ni saborizantes artificiales.</span>
             </div>
             <div class="stat">
-              <strong>1 combo</strong>
-              <span>Producto estrella con propuesta creativa.</span>
+              <strong>6+</strong>
+              <span>Variedades únicas para todos los gustos y antojos.</span>
             </div>
             <div class="stat">
-              <strong>+ diseño</strong>
-              <span>Comida y detalle decorativo en una sola experiencia.</span>
+              <strong>Fresco</strong>
+              <span>Preparado el mismo día de tu pedido, no antes.</span>
             </div>
           </div>
         </div>
 
         <div class="hero-visual" data-reveal>
           <figure class="photo-card tall">
-            <img src="./assets/Pagina-Principal-2.jpg" alt="Presentación principal de Hummus Snack con producto y branding." width="900" height="1200" loading="eager" decoding="async">
+            <img src="./hummus1.jpg" alt="Hummus clásico servido en bowl con aceite de oliva y paprika" width="900" height="1200" loading="eager" decoding="async">
           </figure>
           <figure class="photo-card small">
-            <img src="./assets/Mas-Sobre-Nosotros-5.jpg" alt="Detalle del producto de hummus y maceta decorativa." width="900" height="1200" loading="lazy" decoding="async">
+            <img src="./hummus2.jpg" alt="Hummus Snack acompañado de pan pita tostado y verduras frescas" width="900" height="1200" loading="lazy" decoding="async">
           </figure>
           <div class="floating-note">
             <strong>Snack Pack</strong>
-            <span>Hummus árabe + experiencia creativa con maceta reciclada para convertir una compra en un recuerdo.</span>
+            <span>Hummus + pan pita + acompañante a tu elección. El combo perfecto para compartir o disfrutar solo.</span>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- PRODUCTOS -->
     <section id="productos">
       <div class="container">
         <div class="section-heading" data-reveal>
           <div>
-            <h2>Productos que venden mejor</h2>
+            <h2>Nuestras variedades</h2>
           </div>
-          <p>Organicé la oferta en tarjetas claras para que el cliente entienda rápido qué compra, por qué es diferente y qué acción debe tomar.</p>
+          <p>Cada receta tiene su propio carácter: desde el clásico suave hasta versiones atrevidas con pimentón ahumado, ajo asado o jalapeños. Hay un hummus para cada momento.</p>
         </div>
 
         <div class="products-grid">
           <article class="product-card" data-reveal>
             <div class="product-media">
-              <img src="./assets/Menu-6.jpg" alt="Menú de Hummus Snack presentado en una composición visual." width="900" height="1200" loading="lazy" decoding="async">
+              <img src="./hummus3.jpg" alt="Hummus clásico árabe con tahini, limón y aceite de oliva extra virgen" width="900" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="product-body">
-              <span class="tag">Producto estrella</span>
-              <h3>Snack Pack</h3>
-              <p>Combo con hummus artesanal, acompañantes y una experiencia creativa que vuelve memorable la compra.</p>
+              <span class="tag">Más vendido</span>
+              <h3>Hummus Clásico</h3>
+              <p>La receta tradicional que nos hizo famosos. Garbanzos cocidos al momento, tahini artesanal, limón fresco y aceite de oliva extra virgen. Suave, cremoso e irresistible.</p>
               <div class="price-row">
-                <strong>Desde tu menú</strong>
+                <strong>Pídelo hoy</strong>
                 <a class="btn btn-secondary" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Cotizar</a>
               </div>
             </div>
@@ -615,30 +703,78 @@
 
           <article class="product-card" data-reveal>
             <div class="product-media">
-              <img src="./assets/Historia-4.jpg" alt="Plato de hummus servido con pan e ingredientes frescos." width="900" height="1200" loading="lazy" decoding="async">
+              <img src="./hummus4.jpg" alt="Hummus ahumado con pimentón rojo asado y especias mediterráneas" width="900" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="product-body">
-              <span class="tag">Artesanal</span>
-              <h3>Hummus tradicional</h3>
-              <p>Preparado con ingredientes frescos y una presentación cálida para transmitir sabor casero desde el primer vistazo.</p>
+              <span class="tag">Edición especial</span>
+              <h3>Hummus Ahumado</h3>
+              <p>Pimentón rojo asado directamente en el fuego, mezclado con nuestra base clásica. Un sabor profundo con un color vibrante que lo hace irresistible desde la primera vista.</p>
               <div class="price-row">
-                <strong>Ideal para antojos</strong>
-                <a class="btn btn-secondary" href="#contacto">Consultar</a>
+                <strong>Sabor intenso</strong>
+                <a class="btn btn-secondary" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Cotizar</a>
               </div>
             </div>
           </article>
 
           <article class="product-card" data-reveal>
             <div class="product-media">
-              <img src="./assets/Contactanos-3.jpg" alt="Sección de contacto e identidad visual de Hummus Snack." width="900" height="1200" loading="lazy" decoding="async">
+              <img src="./hummus5.jpg" alt="Hummus picante con jalapeños frescos y aceite de chile" width="900" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="product-body">
-              <span class="tag">Venta directa</span>
-              <h3>Pedidos rápidos</h3>
-              <p>Botones directos a WhatsApp, ubicación y datos de contacto para que el cliente convierta sin perder tiempo.</p>
+              <span class="tag">Para los atrevidos</span>
+              <h3>Hummus Picante</h3>
+              <p>Jalapeños frescos, aceite de chile y un toque de comino para quienes buscan algo con carácter. El nivel de picante lo ajustamos según tu gusto.</p>
               <div class="price-row">
-                <strong>Respuesta cercana</strong>
-                <a class="btn btn-secondary" href="tel:+573003603681">Llamar</a>
+                <strong>¿Qué tan picante?</strong>
+                <a class="btn btn-secondary" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Cotizar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Fila extra de productos -->
+        <div class="products-grid" style="margin-top: var(--space-5);">
+          <article class="product-card" data-reveal>
+            <div class="product-media">
+              <img src="./hummus6.jpg" alt="Hummus de ajo negro asado con hierbas frescas" width="900" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-body">
+              <span class="tag">Gourmet</span>
+              <h3>Hummus de Ajo Negro</h3>
+              <p>Ajo negro asado a baja temperatura con dulce concentrado y un leve toque caramelizado. Una experiencia suave y sofisticada para los amantes del detalle gastronómico.</p>
+              <div class="price-row">
+                <strong>Alta cocina</strong>
+                <a class="btn btn-secondary" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Cotizar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-reveal>
+            <div class="product-media">
+              <img src="./hummus1.jpg" alt="Snack Pack de hummus con pan pita y acompañantes frescos" width="900" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-body">
+              <span class="tag">Combo ideal</span>
+              <h3>Snack Pack Completo</h3>
+              <p>Porción de hummus a elegir + pan pita recién horneado + palitos de zanahoria y pepino. Todo en un empaque lindo, perfecto para llevar o regalar.</p>
+              <div class="price-row">
+                <strong>Para compartir</strong>
+                <a class="btn btn-secondary" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Cotizar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-reveal>
+            <div class="product-media">
+              <img src="./hummus2.jpg" alt="Hummus verde con espinaca y albahaca fresca" width="900" height="1200" loading="lazy" decoding="async">
+            </div>
+            <div class="product-body">
+              <span class="tag">Vegano · Nutritivo</span>
+              <h3>Hummus Verde</h3>
+              <p>Espinaca fresca, albahaca y un toque de menta para un hummus lleno de color y vitalidad. Alto en hierro y vitaminas, sin sacrificar ni un gramo de sabor.</p>
+              <div class="price-row">
+                <strong>Fresco y nutritivo</strong>
+                <a class="btn btn-secondary" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">Cotizar</a>
               </div>
             </div>
           </article>
@@ -646,78 +782,121 @@
       </div>
     </section>
 
+    <!-- HISTORIA -->
     <section id="historia" class="leaf-bg">
       <div class="container story-grid">
         <div class="story-card" data-reveal>
-          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-bottom: 1rem;">Una marca con relato</h2>
-          <p>Tomé la esencia de tus piezas: gastronomía árabe, sostenibilidad y creatividad. Por eso la página mezcla una estética elegante con bloques modernos de venta para que no parezca escolar, sino una marca lista para mostrarse en redes o a clientes.</p>
-          <p>También dejé una estructura simple de editar: hero, catálogo, historia, beneficios y contacto. Así la puedes usar en HTML puro o migrarla fácil a React cuando quieras.</p>
+          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-bottom: 1rem;">Una receta nacida en casa</h2>
+          <p>Hummus Snack nació en una cocina de Yumbo, Valle del Cauca, cuando descubrimos que el hummus que conocíamos nada tenía que ver con el que se puede hacer con ingredientes frescos y un poco de dedicación.</p>
+          <p>Empezamos vendiendo entre amigos y la respuesta fue tan buena que decidimos compartirlo con todos. Hoy cada lote se prepara a mano, sin atajos, con la misma receta que usamos el primer día.</p>
+          <p style="margin-top: var(--space-4);">Creemos que comer bien no tiene que ser aburrido. Por eso cada variedad de Hummus Snack tiene su propia personalidad, y cada empaque viene pensado para que también decores tu espacio con él.</p>
+          <a class="btn btn-ig" href="https://www.instagram.com/p/DaEvh-MNoEn/?igsh=MXA2ZDd3azRvdnY4Zg==" target="_blank" rel="noopener noreferrer" style="margin-top: var(--space-6); display: inline-flex;">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Ver nuestra historia en Instagram
+          </a>
         </div>
         <div class="story-gallery" data-reveal>
           <figure class="photo-card tall">
-            <img src="./assets/Historia-4.jpg" alt="Historia visual del hummus con presentación del producto." width="900" height="1200" loading="lazy" decoding="async">
+            <img src="./hummus3.jpg" alt="Proceso de preparación artesanal del hummus en cocina de Hummus Snack" width="900" height="1200" loading="lazy" decoding="async">
           </figure>
           <figure class="photo-card small">
-            <img src="./assets/Nuestra-Empresa-7.jpg" alt="Sección institucional con misión, visión y valores de Hummus Snack." width="900" height="1200" loading="lazy" decoding="async">
+            <img src="./hummus4.jpg" alt="Ingredientes frescos: garbanzos, tahini, limón y aceite de oliva" width="900" height="1200" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </div>
+
+      <!-- Galería de fotos adicional -->
+      <div class="container">
+        <div class="gallery-strip" data-reveal>
+          <figure>
+            <img src="./hummus5.jpg" alt="Hummus Snack presentado en empaque ecológico listo para entrega" width="600" height="600" loading="lazy" decoding="async">
+          </figure>
+          <figure>
+            <img src="./hummus6.jpg" alt="Variedad de hummus con acompañantes en mesa servida" width="600" height="600" loading="lazy" decoding="async">
+          </figure>
+          <figure>
+            <img src="./hummus1.jpg" alt="Bowl de hummus con garnitura de granos de granada y perejil fresco" width="600" height="600" loading="lazy" decoding="async">
           </figure>
         </div>
       </div>
     </section>
 
+    <!-- BENEFICIOS / INGREDIENTES -->
     <section id="beneficios">
       <div class="container">
         <div class="section-heading" data-reveal>
           <div>
-            <h2>Por qué esta landing funciona</h2>
+            <h2>Ingredientes que hacen la diferencia</h2>
           </div>
-          <p>La idea fue convertir tus láminas en una experiencia web más comercial, con mejor jerarquía visual, llamadas a la acción y un recorrido natural en una sola pantalla larga.</p>
+          <p>No usamos conservantes ni saborizantes artificiales. Cada ingrediente fue seleccionado por su calidad y su aporte al sabor final. Eso se nota en cada bocado.</p>
         </div>
 
         <div class="benefits-grid">
           <article class="benefit" data-reveal>
-            <div>
-              <div class="benefit-icon" aria-hidden="true">✦</div>
-              <h3>Diseño alineado</h3>
-              <p>Conserva tu paleta beige, negro, dorado y verde oliva para mantener coherencia con la marca original.</p>
+            <div class="benefit-img">
+              <img src="./hummus2.jpg" alt="Garbanzos frescos base del hummus artesanal" width="600" height="450" loading="lazy" decoding="async">
             </div>
-            <span class="tag">Branding</span>
+            <div class="benefit-body">
+              <div>
+                <div class="benefit-icon" aria-hidden="true">🫘</div>
+                <h3>Garbanzos frescos</h3>
+                <p>Cocidos el mismo día, nunca de lata. Esto nos da una textura más cremosa y un sabor más limpio que ningún hummus industrial puede igualar.</p>
+              </div>
+              <span class="tag">Base del sabor</span>
+            </div>
           </article>
           <article class="benefit" data-reveal>
-            <div>
-              <div class="benefit-icon" aria-hidden="true">✦</div>
-              <h3>Single page</h3>
-              <p>Todo el contenido vive en una sola página con navegación suave, ideal para compartir por enlace o QR.</p>
+            <div class="benefit-img">
+              <img src="./hummus3.jpg" alt="Tahini artesanal hecho de semillas de ajonjolí tostadas" width="600" height="450" loading="lazy" decoding="async">
             </div>
-            <span class="tag">Usabilidad</span>
+            <div class="benefit-body">
+              <div>
+                <div class="benefit-icon" aria-hidden="true">🌿</div>
+                <h3>Tahini artesanal</h3>
+                <p>Pasta de ajonjolí tostado con la textura y el amargor justo. Sin azúcar añadida ni aceites vegetales — solo semillas de calidad, molidas en frío.</p>
+              </div>
+              <span class="tag">Proteína vegetal</span>
+            </div>
           </article>
           <article class="benefit" data-reveal>
-            <div>
-              <div class="benefit-icon" aria-hidden="true">✦</div>
-              <h3>Lista para vender</h3>
-              <p>Incluye botones hacia WhatsApp, foco en el producto y una presentación más persuasiva que informativa.</p>
+            <div class="benefit-img">
+              <img src="./hummus4.jpg" alt="Aceite de oliva extra virgen y limón fresco para hummus" width="600" height="450" loading="lazy" decoding="async">
             </div>
-            <span class="tag">Conversión</span>
+            <div class="benefit-body">
+              <div>
+                <div class="benefit-icon" aria-hidden="true">🫒</div>
+                <h3>Aceite de oliva extra virgen</h3>
+                <p>Prensado en frío, con sus antioxidantes intactos. Le da al hummus esa nota afrutada y aterciopelada que hace que quieras más.</p>
+              </div>
+              <span class="tag">Antioxidantes</span>
+            </div>
           </article>
           <article class="benefit" data-reveal>
-            <div>
-              <div class="benefit-icon" aria-hidden="true">✦</div>
-              <h3>Fácil de adaptar</h3>
-              <p>Puedes cambiar textos, precios, fotos y enlaces sin complicarte, o pasarla luego a React/Vite.</p>
+            <div class="benefit-img">
+              <img src="./hummus5.jpg" alt="Especias mediterráneas frescas para las variedades especiales" width="600" height="450" loading="lazy" decoding="async">
             </div>
-            <span class="tag">Escalable</span>
+            <div class="benefit-body">
+              <div>
+                <div class="benefit-icon" aria-hidden="true">🧄</div>
+                <h3>Especias mediterráneas</h3>
+                <p>Comino tostado, pimentón dulce, ajo fresco y hierbas seleccionadas. En cada variedad usamos combinaciones distintas para crear perfiles de sabor únicos.</p>
+              </div>
+              <span class="tag">Sin artificiales</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- CONTACTO -->
     <section id="contacto" class="leaf-bg">
       <div class="container contact-grid">
         <div class="contact-card" data-reveal>
-          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-bottom: 1rem;">Contacto directo</h2>
-          <p style="color: rgba(247,242,235,0.78); max-width: 46ch;">Dejé esta sección pensada para conversión rápida: WhatsApp, dirección, correo y horario en un mismo bloque.</p>
+          <h2 style="font-family: var(--font-display); font-size: var(--text-xl); line-height: 1; margin-bottom: 1rem;">¿Listo para pedir?</h2>
+          <p style="color: rgba(247,242,235,0.78); max-width: 46ch;">Hacemos pedidos bajo encargo para que tu hummus llegue siempre fresco. Escríbenos por WhatsApp y te respondemos rápido.</p>
           <div class="contact-list">
             <div class="contact-item">
-              <span>Teléfono / WhatsApp</span>
+              <span>WhatsApp / Pedidos</span>
               <a href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">300 360 3681</a>
             </div>
             <div class="contact-item">
@@ -728,21 +907,32 @@
               <span>Correo</span>
               <a href="mailto:hummussnack@gmail.com">hummussnack@gmail.com</a>
             </div>
+            <div class="contact-item">
+              <span>Instagram</span>
+              <a href="https://www.instagram.com/p/DaEvh-MNoEn/?igsh=MXA2ZDd3azRvdnY4Zg==" target="_blank" rel="noopener noreferrer">@hummussnack</a>
+            </div>
           </div>
+          <a class="btn btn-ig" href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer" style="margin-top: var(--space-6);">Hacer mi pedido ahora</a>
         </div>
 
         <div class="contact-panel" data-reveal>
           <div class="mini-box">
-            <h3>Qué te entregué</h3>
-            <p>Una landing moderna en un solo archivo HTML con CSS y JavaScript integrado, sin dependencias ni complicaciones.</p>
+            <div class="mini-box-img">
+              <img src="./hummus6.jpg" alt="Pedido de hummus empacado listo para entrega en Yumbo" width="600" height="280" loading="lazy" decoding="async">
+            </div>
+            <div class="mini-box-body">
+              <h3>Pedidos mínimos</h3>
+              <p>Aceptamos pedidos desde 1 porción individual hasta combos para eventos y reuniones. Cuéntanos cuántos son y coordinamos la entrega.</p>
+            </div>
           </div>
           <div class="mini-box">
-            <h3>Siguiente mejora sugerida</h3>
-            <p>Agregar botón flotante de WhatsApp, galería de productos y una sección de testimonios o reseñas para subir confianza.</p>
-          </div>
-          <div class="mini-box">
-            <h3>Ideal para</h3>
-            <p>Publicarla en GitHub Pages, Netlify, Render estático o integrarla luego dentro de un proyecto React/Vite.</p>
+            <div class="mini-box-img">
+              <img src="./hummus2.jpg" alt="Catering de hummus para eventos con presentación especial" width="600" height="280" loading="lazy" decoding="async">
+            </div>
+            <div class="mini-box-body">
+              <h3>Catering y eventos</h3>
+              <p>¿Tienes un evento, cumpleaños o reunión? Preparamos bandejas de hummus con acompañantes para que todos queden satisfechos y sorprendidos.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -751,11 +941,15 @@
 
   <footer class="site-footer">
     <div class="footer-wrap">
-      <p>Landing single page diseñada para Hummus Snack con enfoque visual, comercial y fácil de editar.</p>
+      <p>© 2025 Hummus Snack · Artesanal, fresco y hecho con amor en Yumbo, Valle del Cauca.</p>
       <div class="socials">
+        <a href="https://www.instagram.com/p/DaEvh-MNoEn/?igsh=MXA2ZDd3azRvdnY4Zg==" target="_blank" rel="noopener noreferrer" class="ig-link" aria-label="Instagram de Hummus Snack">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Instagram
+        </a>
         <a href="https://wa.me/573003603681" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <a href="mailto:hummussnack@gmail.com">Correo</a>
-        <a href="#inicio">Arriba</a>
+        <a href="#inicio">Arriba ↑</a>
       </div>
     </div>
   </footer>
